@@ -1,4 +1,4 @@
-# ORCT2Src
+# ORCT2Srv
 
 ## Building
 ```
