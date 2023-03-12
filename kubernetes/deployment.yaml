@@ -20,7 +20,7 @@ spec:
             name: installation
           env:
           - name: SAVEFILE
-            value: "/orct2/Minimum/Scenarios/Crazy\ Castle.SC6"
+            value: "/orct2/Minimum/Scenarios/Crazy Castle.SC6"
           ports:
             - containerPort: 11753
       volumes:
