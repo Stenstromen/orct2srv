@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orct2srv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orct2srv
+  template:
+    metadata:
+      labels:
+        app: orct2srv
+    spec:
+      containers:
+        - name: orct2srv
+          image: dockr.it/orct2srv:latest
+          volumeMounts:
+          - mountPath: "/orct2"
+            name: installation
+          env:
+          - name: SAVEFILE
+            value: "/orct2/Minimum/Scenarios/Crazy\ Castle.SC6"
+          ports:
+            - containerPort: 11753
+      volumes:
+        - name: installation
+          persistentVolumeClaim:
+            claimName: orct2srv-pv-claim
+      imagePullSecrets:
+        - name: dockrit
