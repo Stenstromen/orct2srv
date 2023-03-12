@@ -1,5 +1,6 @@
 FROM ubuntu:jammy
 ENV OpenRCT2Version=0.4.3
+ENV SAVEFILE=$SAVEFILE
 WORKDIR /
 RUN apt update && \
 apt -y install \
