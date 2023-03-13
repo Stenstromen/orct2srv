@@ -23,6 +23,16 @@ spec:
             value: "/orct2/Minimum/Scenarios/Crazy Castle.SC6"
           ports:
             - containerPort: 11753
+          readinessProbe:
+            tcpSocket:
+              port: 11753
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 11753
+            initialDelaySeconds: 15
+            periodSeconds: 20
       volumes:
         - name: installation
           persistentVolumeClaim:
